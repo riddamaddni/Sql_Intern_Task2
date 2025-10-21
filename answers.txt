@@ -1,0 +1,40 @@
+
+Answers to In-Depth Task Questions
+
+1. Difference between NULL and 0?
+
+0 is a specific, defined numerical value. For example, if a patient's Age_years is 0, it means they are less than one year old. It is concrete information.
+
+NULL represents the complete absence of a value. If a patient's Age_years is NULL, it means the information was never recorded or is unknown. It is a placeholder for missing data, not a value itself.
+
+2. What is a default constraint?
+
+A DEFAULT constraint is a rule applied to a column that automatically provides a pre-defined value during an INSERT operation if no other value is explicitly supplied. This is crucial for ensuring data consistency and preventing NULLs in columns that should always have a baseline value (e.g., Gender defaulting to "Unknown").
+
+3. How does IS NULL work?
+
+IS NULL is the specific operator required to check for the presence of NULL. Standard comparison operators like = NULL will not work because NULL is not considered "equal" to anything, including itself. WHERE Organization IS NULL correctly finds all rows where the organization data is missing.
+
+4. How do you update multiple rows?
+
+By writing an UPDATE statement with a WHERE clause that defines a condition met by all the rows you intend to change. For example, UPDATE drugs SET manufacturer = 'NewPharma' WHERE manufacturer = 'OldPharma'; will find and update every drug from the old manufacturer.
+
+5. Can we insert partial values?
+
+Yes, and this is standard practice. You specify which columns you are providing data for in the INSERT INTO statement. Any other nullable columns that are not mentioned will be automatically populated with NULL or their DEFAULT value, if one exists.
+
+6. What happens if a NOT NULL field is left empty?
+
+The database will reject the entire INSERT or UPDATE command and return an error. This is a critical data validation feature that enforces a business rule, ensuring that essential information (like a report_reference) is never missing.
+
+7. How do you rollback a deletion?
+
+You must perform the DELETE statement inside a transaction block, which is initiated with START TRANSACTION;. After executing the deletion, you can undo it with the ROLLBACK; command. If you wish to save the change permanently, you would use COMMIT; instead. This provides a safety net against accidental data loss.
+
+8. Can we insert values into specific columns only?
+
+Yes. This is the standard syntax for INSERT, allowing for flexibility when only partial information is available. Example: `INSERTERT INTO ... SELECT ... statement, which can copy and insert rows from one table into another.
+
+10. What is ON DELETE CASCADE?
+
+It's a powerful foreign key rule. When a parent row is deleted, all child rows that reference it are automatically deleted as well.
