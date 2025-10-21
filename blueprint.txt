@@ -1,0 +1,25 @@
+🎯 What Was Done
+
+The primary goal was to create a comprehensive SQL script that demonstrated proficiency in Data Manipulation Language (DML). This included:
+
+Database Construction: A full database schema was established based on the provided specifications.
+
+Realistic Data Population: The database was populated with "imperfect" data, intentionally including NULL values to simulate real-world conditions.
+
+DML Command Execution: A series of INSERT, UPDATE, and DELETE commands were executed to showcase various data manipulation scenarios.
+
+Proactive Error Handling: A common database client error (Error 1175: Safe Update Mode) was anticipated and handled directly within the script.
+
+🛠️ How It Was Done
+
+The solution was built using a structured approach to ensure accuracy and completeness:
+
+Schema First: All CREATE TABLE statements were executed first to build the database structure, paying close attention to primary and foreign keys.
+
+Strategic NULL Insertion: During the INSERT phase, NULL values were deliberately placed in non-essential columns (e.g., Reporters.phone, Patients.Weight_kg) to set the stage for NULL-handling exercises.
+
+Layered DML Scenarios: The DML commands were written to increase in complexity, starting with simple single-row insertions and moving to multi-row updates and deletions based on broad conditions.
+
+Session Configuration: The script begins with SET SQL_SAFE_UPDATES = 0;. This single command resolves the "Safe Update Mode" issue, allowing the rest of the script to run without requiring manual changes to the database client's settings. This ensures the solution is portable and user-friendly.
+
+Documentation: A detailed README.md was created to explain the project's objectives, workflow, and core concepts in a professional format
