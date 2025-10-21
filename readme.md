@@ -22,11 +22,6 @@ UPDATE: Scenarios included single-row updates (by primary key), multi-row update
 
 DELETE: Both "safe" deletions (on data with no dependencies) and a commented-out "unsafe" deletion were included to explain and demonstrate an understanding of referential integrity.
 
-🗂️ Files in this Repository
-
-pharmacovigilance_db.sql: This is the complete, self-contained, and runnable SQL script. It is professionally structured to handle session configuration (disabling Safe Mode), perform schema creation (CREATE TABLE), populate the database with a realistic, "messy" dataset (INSERT), and then execute all the required DML practice commands in a single, seamless flow. Every block of code is commented to explain its logic and purpose.
-
-README.md: This detailed guide, which you are currently reading. It serves as the project's main documentation, explaining its purpose, the development workflow, the key concepts demonstrated, and providing clear, in-depth answers to all task-related questions.
 
 🚀 How to Run the Script
 
